@@ -4,7 +4,7 @@ const Nav =()=> (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div className="container">
       <a className="navbar-brand" href="#">Start Bootstrap</a>
-      <button className="navbar-toggler" type="button" dataToggle="collapse" dataTarget="#navbarResponsive" ariaControls="navbarResponsive" ariaExpanded="false" ariaLabel="Toggle navigation">
+      <button className="navbar-toggler" type="button" datatoggle="collapse" datatarget="#navbarResponsive" ariacontrols="navbarResponsive" ariaexpanded="false" arialabel="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse" id="navbarResponsive">
