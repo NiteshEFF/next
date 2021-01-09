@@ -1,103 +1,124 @@
-import React from "react";
+import React, {Component} from "react";
 
-const Movies = ()=>{
-    return <> 
-    <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-              <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
-              <div className="card-body">
-                <h4 className="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div className="card-footer">
-                <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
+class Movies extends Component{
+    constructor(props){
+        super(props);
+        this.state={count:0};
+    }
+    increment = ()=>{
+        let current = {...this.state};
+        current.count = current.count+1;
+        this.setState(current);
+    }
+    decrement = () =>{
+        let current = {...this.state};
+        current.count = current.count - 1;
+        this.setState(current);
+    }
+    render(){
+        return <> 
+            <div>
+                <button className="btn btn-primary" onClick={this.increment}>Increment Button</button>
+                <button className="btn btn-primary" onClick={this.decrement}>Decrement Button</button>
+                <h1>{this.state.count}</h1>
             </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-              <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
-              <div className="card-body">
-                <h4 className="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                <div className="col-lg-4 col-md-6 mb-4">
+                    <div className="card h-100">
+                        <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
+                        <div className="card-body">
+                            <h4 className="card-title">
+                                <a href="#">Item One</a>
+                            </h4>
+                            <h5>$24.99</h5>
+                            <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                        </div>
+                        <div className="card-footer">
+                            <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                        </div>
+                    </div>
+                </div>
+    
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Two</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  </div>
+                </div>
               </div>
-              <div className="card-footer">
-                <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Three</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-              <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
-              <div className="card-body">
-                <h4 className="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Four</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  </div>
+                </div>
               </div>
-              <div className="card-footer">
-                <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+    
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Five</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-              <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
-              <div className="card-body">
-                <h4 className="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+    
+              <div className="col-lg-4 col-md-6 mb-4">
+                <div className="card h-100">
+                  <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
+                  <div className="card-body">
+                    <h4 className="card-title">
+                      <a href="#">Item Six</a>
+                    </h4>
+                    <h5>$24.99</h5>
+                    <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                  </div>
+                  <div className="card-footer">
+                    <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  </div>
+                </div>
               </div>
-              <div className="card-footer">
-                <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-              <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
-              <div className="card-body">
-                <h4 className="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div className="card-footer">
-                <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 mb-4">
-            <div className="card h-100">
-              <a href="#"><img className="card-img-top" src="http://placehold.it/700x400" alt="" /></a>
-              <div className="card-body">
-                <h4 className="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div className="card-footer">
-                <small className="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-        
-    </>
-};
+            
+        </>
+    }
+}
 export default Movies;

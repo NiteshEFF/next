@@ -15,11 +15,11 @@ const Home = () => (
               <div className="row">
                 <Sidebar/>
                 <div className="col-lg-9">
-        <Craousel/>
-        <div className="row">
-          <Movies/>
-          </div>
-      </div>
+                  <Craousel/>
+                  <div className="row">
+                    <Movies/>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
