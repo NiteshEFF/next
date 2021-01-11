@@ -1,26 +1,11 @@
 import React, {Component} from "react";
 
 class Movies extends Component{
-    constructor(props){
-        super(props);
-        this.state={count:0};
-    }
-    increment = ()=>{
-        let current = {...this.state};
-        current.count = current.count+1;
-        this.setState(current);
-    }
-    decrement = () =>{
-        let current = {...this.state};
-        current.count = current.count - 1;
-        this.setState(current);
-    }
     render(){
         return <> 
             <div>
-                <button className="btn btn-primary" onClick={this.increment}>Increment Button</button>
-                <button className="btn btn-primary" onClick={this.decrement}>Decrement Button</button>
-                <h1>{this.state.count}</h1>
+                
+                <h1>{this.props.count}</h1>
             </div>
                 <div className="col-lg-4 col-md-6 mb-4">
                     <div className="card h-100">

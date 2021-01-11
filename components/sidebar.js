@@ -1,7 +1,6 @@
-import React,{useState} from "react";
+import React from "react";
 
-const Sidebar = () => {
-  const [count, setCount] = useState(0);
+const Sidebar = (props) => {
 
 return (<div className="col-lg-3">
 
@@ -12,9 +11,8 @@ return (<div className="col-lg-3">
   <a href="#" className="list-group-item">Category 3</a>
 </div>
 <div>
-                <button className="btn btn-primary" onClick={()=>setCount(count+1)}>Increment Button</button>
-                <button className="btn btn-primary" onClick={()=>setCount(count-1)}>Decrement Button</button>
-                <h1>{count}</h1>
+                
+                <h1>{props.count}</h1>
             </div>
 </div>);
 };
