@@ -5,6 +5,7 @@ import Sidebar from '../components/sidebar';
 import Movies from '../components/movies';
 import Craousel from '../components/craousel';
 import Footer from '../components/footer';
+import MovieList from '../resources/1_data';
 
 const Home = () => {
   const [count,setCount] = useState(0)
@@ -22,7 +23,7 @@ const Home = () => {
                 <div className="col-lg-9">
                   <Craousel/>
                   <div className="row">
-                    <Movies count={count}/>
+                    <Movies count={count} list={MovieList}/>
                   </div>
                 </div>
               </div>
