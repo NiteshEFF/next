@@ -14,12 +14,12 @@ class Movies extends Component{
               this.props.list.map((item) => {
                 return (<div className="col-lg-4 col-md-6 mb-4" key={item.id}>
                 <div className="card h-100">
-                  <Link href={`/movies/${item.id}`}>
+                  <Link href="/movies/[id]" as={`/movies/${item.id}`}>
                     <a><img className="card-img-top" src={item.image} alt="" /></a>
                     </Link>
                     <div className="card-body">
                         <h4 className="card-title">
-                          <Link href={`/movies/${item.id}`}>
+                          <Link href="/movies/[id]" as={`/movies/${item.id}`}>
                             <a>{item.name}</a>
                             </Link>
                         </h4>

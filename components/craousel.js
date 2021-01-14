@@ -1,24 +1,22 @@
 import React from "react";
 
-const Craousel = () => {
+const Craousel = (props) => {
+  const {movieslist} = props;
     return (
         <div id="carouselExampleIndicators" className="carousel slide my-4" data-ride="carousel">
           <ol className="carousel-indicators">
-            <li datatarget="#carouselExampleIndicators" dataslide-to="0" className="active"></li>
-            <li datatarget="#carouselExampleIndicators" dataslide-to="1"></li>
-            <li datatarget="#carouselExampleIndicators" dataslide-to="2"></li>
+          {Array.isArray(movieslist) && movieslist.length >0 ? movieslist.map((item, i) =>
+           <li datatarget="#carouselExampleIndicators" dataslide-to={i} key={i} className={i==0? 'active':''}></li>
+            ):null}
+            
           </ol>
           <div className="carousel-inner" role="listbox">
-            <div className="carousel-item active">
-              <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide" />
+          {Array.isArray(movieslist) && movieslist.length >0 ? movieslist.map((item, i) =>
+           <div className={i==0? "carousel-item active" : "carousel-item"} key={`image-${item.id}`}>
+              <img className="d-block img-fluid" src={item.cover} alt="First slide" />
             </div>
-            <div className="carousel-item">
-              <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide" />
+            ):null}
             </div>
-            <div className="carousel-item">
-              <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide" />
-            </div>
-          </div>
           <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
             <span className="sr-only">Previous</span>
