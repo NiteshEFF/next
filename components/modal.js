@@ -12,7 +12,7 @@ const Modal = (props) => {
     <div className="modal-content">
       <div className="modal-header">
         <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={()=>toggle(!show)}></button>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={()=>toggle(!show)}>x</button>
       </div>
       <div className="modal-body">
         {props.children}
