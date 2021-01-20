@@ -25,4 +25,13 @@ const getAllCategories = () =>{
     });
 };
 
-export {getAllMovies, getMovieById, getAllCategories};
+const addMovie = (movie) =>{
+    return new Promise((resolve, reject)=>{
+        let random = Math.random();
+        console.log();
+        resources.push({...movie,id:random.toString().slice(2,7)});
+        return resolve(resources);
+    });
+};
+
+export {getAllMovies, getMovieById, getAllCategories, addMovie};

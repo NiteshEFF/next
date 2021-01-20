@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
-const MovieCreateForm = () => {
-    const [form, setForm] = useState({name :'Something new', description: 'Something new'});
+const MovieCreateForm = (props) => {
+    const [form, setForm] = useState({name :'Something new', description: 'Something new',"rating":'','image':'', 'cover':'','longDesc':'','genre':''});
 
     const handleChange = (event) => {
       const target = event.target;
@@ -10,7 +10,22 @@ const MovieCreateForm = () => {
         [name]:target.value
       });
     };
-    console.log(form);
+
+    const genreChange = (event) => {
+      const target = event.target;
+      const {options} = target;
+      const name = target.name;
+      const optionSLength = options.length;
+      let value =[];
+      for (let i=0; i<optionSLength; i++){
+        if(options[i].selected){
+          value.push(options[i].value);
+        }
+      }
+      setForm({...form,
+        [name]:value.toString()
+      });
+    };
     return (
       <form>
         <div className="form-group">
@@ -85,6 +100,7 @@ const MovieCreateForm = () => {
         <div className="form-group">
           <label htmlFor="genre">Genre</label>
           <select multiple
+           onChange={genreChange}
            name="genre"
            className="form-control" id="genre">
             <option>drama</option>
@@ -94,6 +110,7 @@ const MovieCreateForm = () => {
             <option>action</option>
           </select>
         </div>
+        <button type="button" className="btn btn-primary" onClick={()=>{props.addMovie(form)}}>Create Movie</button>
       </form>
     )
   }
