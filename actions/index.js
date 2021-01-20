@@ -1,22 +1,16 @@
 import resources from '../resources/1_data';
 import category from '../resources/category';
+import axios from 'axios';
+const BASE_URL = 'http://localhost:3000';
 let getAllMovies = () =>{
-    return new Promise((resolve, reject)=>{
-          resolve(resources);
-    });
+    return axios.get(`${BASE_URL}/api/v1/movies`).then((response)=>{
+        return response.data;
+    })
 };
 
 let getMovieById = (id) => {
-    return new Promise((resolve,reject)=>{
-        const movieIndex = resources.findIndex(m => m.id === id);
-        if(movieIndex!=-1){
-            const movie = resources[movieIndex];
-            resolve(movie);
-        } else {
-            reject("Movie Not found")
-        }
-        
-
+    return axios.get(`${BASE_URL}/api/v1/movies/${id}`).then((response)=>{
+        return response.data;
     });
 }
 const getAllCategories = () =>{
@@ -26,12 +20,14 @@ const getAllCategories = () =>{
 };
 
 const addMovie = (movie) =>{
-    return new Promise((resolve, reject)=>{
-        let random = Math.random();
-        console.log();
-        resources.push({...movie,id:random.toString().slice(2,7)});
-        return resolve(resources);
-    });
+    return axios.post(`${BASE_URL}/api/v1/movies`,{...movie,id:Math.random().toString().slice(2,7)}).then((response)=> response.data);
 };
 
-export {getAllMovies, getMovieById, getAllCategories, addMovie};
+const rmMovie = (id,router)=>{
+    return axios.delete(`${BASE_URL}/api/v1/movies/${id}`).then((response)=>{
+        router.push('/');
+        return response.data;
+    });
+}
+
+export {getAllMovies, getMovieById, getAllCategories, addMovie,rmMovie};

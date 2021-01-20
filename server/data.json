@@ -1,0 +1,33 @@
+[
+  {
+    "id": "1",
+    "name": "The Shawshank Redemption",
+    "releaseYear": 1994,
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+    "longDesc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque non nobis, impedit veritatis quia, consectetur velit ea error ducimus totam ipsam, nisi dolorem voluptatum ut perspiciatis ex quidem nesciunt assumenda.",
+    "rating": 4.8,
+    "genre": "drama",
+    "cover": "https://images.unsplash.com/photo-1507924538820-ede94a04019d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQ2NDA3MDcxMF5BMl5BanBnXkFtZTgwMjE5NTU0NzE@._V1_CR0,60,640,360_AL_UX477_CR0,0,477,268_AL_.jpg"
+  },
+  {
+    "name": "Hare Krishna",
+    "description": "Movie Mantra and the swami who started all",
+    "rating": "9",
+    "image": "https://english.cdn.zeenews.com/sites/default/files/2017/12/14/646971-hare-krishna-film.jpg",
+    "cover": "https://english.cdn.zeenews.com/sites/default/files/2017/12/14/646971-hare-krishna-film.jpg",
+    "longDesc": "Swami who travelled to USA with 40RS and establishes ISKCON with whole lots of struggles.",
+    "genre": "drama,music",
+    "id": "76953"
+  },
+  {
+    "name": "The Journey Home",
+    "description": "Autobiography of an American Swami",
+    "rating": "9",
+    "image": "https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781608875221/the-journey-home-audio-book-9781608875221_hr.jpg",
+    "cover": "https://i.ytimg.com/vi/u6HEaEUXFaY/maxresdefault.jpg",
+    "longDesc": "Within this extraordinary memoir, Radhanath Swami weaves a colorful tapestry of adventure, mysticism, and love. Readers follow Richard Slavin from the suburbs of Chicago to the caves of the Himalayas as he transforms from young seeker to renowned spiritual guide. The Journey Home is an intimate account of the steps to self awareness and a penetrating glimpse into the heart of mystic traditions and the challenges that all souls must face on the road to inner harmony and a union with the Divine. \n\nThrough near-death encounters, apprenticeships with advanced yogis, and years of travel along the pilgrim’s path, Radhanath Swami eventually reaches the inner sanctum of India’s mystic culture and finds the love he has been seeking. It is a tale told with rare candor, immersing the reader in a journey that is at once engaging, humorous, and heartwarming.",
+    "genre": "drama,adventure,historical",
+    "id": "35269"
+  }
+]

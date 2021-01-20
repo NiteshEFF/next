@@ -1,14 +1,17 @@
 import React,{useState} from "react";
 import Modal from './modal';
+import {useRouter} from 'next/router';
 import MovieCreateForm from './moviecreateform';
 import {addMovie} from '../actions';
 const Sidebar = (props) => {
   const {categorylist} = props;
+  const router = useRouter();
   const [show, toggleModel] = useState(false);
   
   const createMovie = (item) => {
     addMovie(item).then((list)=>{
       toggleModel(!show);
+      router.push('/');
     });
   };
 
