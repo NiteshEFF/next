@@ -1,7 +1,17 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 const MovieCreateForm = (props) => {
-    const [form, setForm] = useState({name :'Something new', description: 'Something new',"rating":'','image':'', 'cover':'','longDesc':'','genre':''});
+    const [initial,setInitial] = useState(false);
+    const [form, setForm] = useState({id:"",name :'', description: '',"rating":'','image':'', 'cover':'','longDesc':'','genre':'','releaseYear':''});
+
+    useEffect(()=>{
+      if(props.initialData){
+        if(Object.keys(props.initialData).length > 0){
+          setForm(props.initialData);
+          setInitial(true);
+        }
+      }
+    },[initial]);
 
     const handleChange = (event) => {
       const target = event.target;

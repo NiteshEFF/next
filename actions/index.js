@@ -1,7 +1,7 @@
 import resources from '../resources/1_data';
 import category from '../resources/category';
 import axios from 'axios';
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://localhost:3100';
 let getAllMovies = () =>{
     return axios.get(`${BASE_URL}/api/v1/movies`).then((response)=>{
         return response.data;
