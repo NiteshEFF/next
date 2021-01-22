@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import Router from 'next/router';
 import MovieCreateForm from '../../../components/moviecreateform';
-import {getMovieById} from '../../../actions';
+import {getMovieById, updateMovie} from '../../../actions';
 
 class MovieEditForm extends Component{
     
@@ -12,12 +13,20 @@ class MovieEditForm extends Component{
         return {"movie":movie};
     });
     }
+    updateMovie = (item) => {
+     updateMovie(item).then((movie)=>{
+        Router.push('/movies/[id]',`/movies/${item.id}`);
+     });  
+    }
     render(){
         const {movie} = this.props;
         return (
             <div className="container">
                 <h1>Edit the Movie</h1>
-                <MovieCreateForm initialData={movie}/>
+                <MovieCreateForm 
+                initialData={movie}
+                submitbtn="Update"
+                addMovie={(items)=>this.updateMovie(items)}/>
             </div>
         )
     }

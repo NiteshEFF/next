@@ -120,7 +120,11 @@ const MovieCreateForm = (props) => {
             <option>action</option>
           </select>
         </div>
-        <button type="button" className="btn btn-primary" onClick={()=>{props.addMovie(form)}}>Create Movie</button>
+        <button
+         type="button" 
+         className="btn btn-primary" 
+         onClick={()=>{props.addMovie(form)}}>
+           {props.submitbtn || 'Create'} Movie</button>
       </form>
     )
   }

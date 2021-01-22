@@ -30,4 +30,10 @@ const rmMovie = (id,router)=>{
     });
 }
 
-export {getAllMovies, getMovieById, getAllCategories, addMovie,rmMovie};
+const updateMovie = (movie) => {
+    return axios.patch(`${BASE_URL}/api/v1/movies/${movie.id}`,movie).then((response)=>{
+        return response.data;
+    });
+};
+
+export {getAllMovies, getMovieById, getAllCategories, addMovie,rmMovie, updateMovie};

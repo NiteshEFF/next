@@ -23,7 +23,7 @@ return (<div className="col-lg-3">
 <div className="list-group">
   {
     (Array.isArray(categorylist) && categorylist.length >0)? categorylist.map((item)=>
-    <a href="#" className="list-group-item" key={item.id}>
+    <a href="#" className={`list-group-item ${(props.active === item.name)? ' active' : ''}`} key={item.id} onClick={()=> props.filter(item)}>
       {item.name}
       </a>): null
   }

@@ -57,6 +57,20 @@ app.prepare().then(() => {
     )
   });
 
+  server.patch('/api/v1/movies/:id',(req,res)=>{
+    const movieIndex = data.findIndex(m => m.id === req.params.id);
+    data[movieIndex] = req.body;
+    let file = path.join(__dirname,filepath);
+    const stringFilledData = JSON.stringify(data,null,2);
+    fs.writeFile(file,stringFilledData,(err)=>{
+     if(err){
+      res.statusCode(422);
+      return res.json("File not found");}
+      return res.json(data);
+    } 
+    )
+  });
+
   server.get('*', (req, res) => {
     // next.js is handling requests and providing pages where we are navigating to
     return handle(req, res)

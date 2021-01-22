@@ -6,6 +6,7 @@ import {getAllMovies, getAllCategories} from '../actions';
 
 
 class Home extends Component {
+  state = {"activecategory":""}
   static getInitialProps(){
     let movies;
    return getAllMovies().then(item =>{
@@ -16,17 +17,23 @@ class Home extends Component {
     });
     
   }
+  filterCategory = (category) => {
+    let currentState = {...this.state};
+    currentState.activecategory = category.name;
+    this.setState(currentState);
+  }
   render(){
     return <div>
               <div className="home-page">
                 <div className="container">
                   <div className="row">
                     
-                    <Sidebar categorylist={this.props.category}/>
+                    <Sidebar categorylist={this.props.category} filter={(category)=>this.filterCategory(category)} active={this.state.activecategory}/>
                     <div className="col-lg-9">
                       <Craousel movieslist={this.props.movie}/>
+                      <h1>Displaying {this.state.activecategory} movies</h1>
                       <div className="row">
-                        <Movies list={this.props.movie}/>
+                        <Movies list={this.props.movie} filter ={this.state.activecategory}/>
                       </div>
                     </div>
                   </div>
