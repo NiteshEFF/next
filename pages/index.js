@@ -22,6 +22,9 @@ class Home extends Component {
     currentState.activecategory = category.name;
     this.setState(currentState);
   }
+  filterMovies = (movies) => {
+    return movies.filter((movie)=>{return movie.genre && movie.genre.includes(this.state.activecategory)});
+  }
   render(){
     return <div>
               <div className="home-page">
@@ -33,7 +36,7 @@ class Home extends Component {
                       <Craousel movieslist={this.props.movie}/>
                       <h1>Displaying {this.state.activecategory} movies</h1>
                       <div className="row">
-                        <Movies list={this.props.movie} filter ={this.state.activecategory}/>
+                        <Movies list={this.filterMovies(this.props.movie)}/>
                       </div>
                     </div>
                   </div>
