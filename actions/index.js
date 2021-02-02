@@ -36,4 +36,10 @@ const updateMovie = (movie) => {
     });
 };
 
-export {getAllMovies, getMovieById, getAllCategories, addMovie,rmMovie, updateMovie};
+const getPost = () => {
+    return axios.get(`${BASE_URL}/api/v1/post`).then((response)=>{
+        return response.data;
+    });
+};
+
+export {getAllMovies, getMovieById, getAllCategories, addMovie,rmMovie, updateMovie, getPost};
