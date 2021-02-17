@@ -5,7 +5,7 @@ class About extends Component {
         super(props);
     }
     render(){
-        return "This is About page."
+        return <h1>This is About page.</h1>
     }
 }
 export default About;
